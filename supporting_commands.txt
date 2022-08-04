@@ -1,0 +1,9 @@
+#Use below commands to start celery
+export DJANGO_SETTINGS_MODULE=jira.settings
+celery -A jira worker --loglevel=info 
+
+#Use below commands to start server
+python3 manage.py runserver
+
+#Use below commands to start rabbitmq server, please make sure docker is installed
+docker run -d -p 5672:5672 rabbitmq
